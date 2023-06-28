@@ -13,6 +13,7 @@ clear()
 aurhelper = input("What is your AUR helper? (only paru and yay) : ")
 aurhinst = input("Is any AUR helper installed? (y/n) : ")
 deskenv = input("What is your Desktop Enviroment? (only kde plasma, xfce, gnome. If you want, this is gonna be installed) : ")
+kernel = input("Do you want to install optimized kernels? (only linux-zen, linux-cachyos or write n) : ")
 deq = input("Do you want to install Desktop Enviroment? (y/n) : ")
 soundtweaks = input("Do you want to install Pipewire? (this gives you lower latency) (y/n) : ")
 caur = input("Do you want to install Chaotic AUR? (y/n) : ")
@@ -140,6 +141,20 @@ elif deskenv == "gnome":
         input("Press enter to continue.")
         clear()
 
+if kernel == "linux-zen":
+    print("Installing linux-zen kernel...")
+    system("sudo pacman -S linux-zen linux-zen-headers")
+    system("sudo grub-mkconfig -o /boot/grub/grub.cfg")
+    input("Press enter to continue.")
+    clear()
+elif kernel == "linux-cachyos":
+    print("Installing linux-cachyos kernel...")
+    system(f"{aurhelper} -S linux-cachyos")
+    system("sudo grub-mkconfig -o /boot/grub/grub.cfg")
+    print("You may also want to install CachyOS repos. After kernel installation, I recommend you to install repos.")
+    input("Press enter to continue.")
+    clear()
+
 if soundtweaks == "y":
     print("Installing Pipewire...")
     system("sudo pacman -S pipewire-pulse pipewire-audio pipewire-jack pipewire-alsa wireplumber")
@@ -233,7 +248,7 @@ if grubp == "y":
     input("Press enter to continue")
     system("sudo nano /etc/default/grub")
     input("Press enter to continue")
-    system("grub-mkconfig -o /boot/grub/grub.cfg")
+    system("sudo grub-mkconfig -o /boot/grub/grub.cfg")
     input("Press enter to continue")
     clear()
 
@@ -282,7 +297,7 @@ if multigpu == "y":
         print("When GRUB config is opened, find GRUB_CMDLINE_LINUX_DEFAULT and write nvidia-drm.modeset=1 the start of the script")
         system("sudo nano /etc/default/grub")
         input("Press enter to continue")
-        system("grub-mkconfig -o /boot/grub/grub.cfg")
+        system("sudo grub-mkconfig -o /boot/grub/grub.cfg")
         input("Press enter to continue")
         clear()
         print("https://wiki.cachyos.org/en/notebooks look at this website!")
