@@ -5,7 +5,7 @@ import script
 #Defines
 clear = lambda: system('clear')
 #Warning
-print("This script is gonna install Chaotic AUR, Wine dependencies and needed things for gaming. all the things that redirected from this script, is done from you")
+print("This script will install Chaotic AUR, Wine dependencies and needed things for gaming. all the things that redirected from this script, is done from you")
 input("Press enter to continue.")
 print("Usage:")
 print("If you want to save configuration with nano, press Ctrl+X for exit and save the file.")
