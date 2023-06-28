@@ -12,7 +12,9 @@ python script.py
 ## Contents
 - AUR Helper installation
 - Desktop Enviroment configurations, installation
+- Performance priority Kernel installation
 - Sound tweaks (pipewire etc.)
+- GPU driver installation and tweaks
 - Game dependencies and softwares installation
 - WineCFG configuration
 - Improving performance with kernel parameters
