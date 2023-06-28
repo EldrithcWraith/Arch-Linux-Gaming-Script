@@ -1,0 +1,26 @@
+vm.swappiness = 10
+vm.vfs_cache_pressure=70
+vm.dirty_ratio = 8
+vm.page-cluster = 0
+vm.dirty_background_ratio = 4
+vm.dirty_writeback_centisecs = 1500
+vm.max_map_count = 2147483642
+
+kernel.nmi_watchdog = 0
+kernel.unprivileged_userns_clone = 1
+kernel.printk = 3 3 3 3
+kernel.kptr_restrict = 2
+kernel.kexec_load_disabled = 1
+
+net.core.somaxconn = 8192
+net.ipv4.tcp_fastopen = 3
+net.ipv4.tcp_congestion_control = bbr2
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_rfc1337 = 1
+
+fs.inotify.max_user_watches = 524288
+fs.file-max = 2097152
+
+kernel.core_pattern = /dev/null
+kernel.sched_pelt_multiplier = 2
+kernel.sched_rt_runtime_us=980000
